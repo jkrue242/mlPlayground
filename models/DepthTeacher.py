@@ -1,12 +1,8 @@
 import os
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE' # there is an issue with OpenMP, not sure if this is a macOS specific problem
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
 import torchvision.transforms as transforms
 from PIL import Image
-import requests 
-from io import BytesIO
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
