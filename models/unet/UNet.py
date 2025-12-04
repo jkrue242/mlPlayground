@@ -2,16 +2,16 @@ import torch
 import torch.nn as nn 
 import torch.nn.functional as F 
 import numpy as np 
-from unet.Conv import Conv
-from unet.Down import Down 
-from unet.Up import Up
+from .Conv import Conv
+from .Down import Down 
+from .Up import Up
 
 #====================================================
-class SegmentationStudent(nn.Module):
+class UNet(nn.Module):
 
     #====================================================
     def __init__(self, channels: int, classes: int):
-        super(SegmentationStudent, self).__init__()
+        super(UNet, self).__init__()
 
         # unet 
         self.input = nn.Sequential(

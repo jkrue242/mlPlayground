@@ -2,18 +2,18 @@ import torch
 import torch.nn as nn 
 import torch.nn.functional as F 
 import numpy as np
-from vit.Decoder import Decoder
-from vit.MultiHeadSelfAttention import MultiHeadSelfAttention
-from vit.PatchEmbedding import PatchEmbedding
-from vit.PositionalEncoding import PositionalEmbedding
-from vit.Transformer import Transformer
+from .Decoder import Decoder
+from .MultiHeadSelfAttention import MultiHeadSelfAttention
+from .PatchEmbedding import PatchEmbedding
+from .PositionalEncoding import PositionalEmbedding
+from .Transformer import Transformer
 
 #====================================================
-class DepthStudent(nn.Module):
+class VisionTransformer(nn.Module):
 
     #====================================================
     def __init__(self, in_channels: int = 3, out_channels: int = 1, image_size: int = 640, transformer_depth: int = 6, embedding_dimension: int = 384, patch_size: int = 14):
-        super(DepthStudent, self).__init__()
+        super(VisionTransformer, self).__init__()
         
         # patches for positional encoding
         num_patches = (image_size // patch_size) ** 2
